@@ -1,0 +1,226 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: rgb(37, 37, 37);
+}
+/* --------------------------------HEADER */
+.header {
+  z-index:1;
+  position: sticky;
+  top: 0%;
+}
+.navbar {
+     background: rgb(17, 111, 219);
+     display: flex;
+     justify-content: space-between;
+ }
+ .logo a {
+    color: rgb(230, 230, 230);
+    text-decoration: none;
+    font-size: 1.8rem;
+    margin: 10px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    font-family: 'Bree Serif', serif;
+ }
+
+ .nav-list {
+     display: flex;
+     justify-content: space-around;
+     width: 15rem;
+     margin: 15px 0px 0px ;
+ }
+ .nav-list a {
+     font-family: 'Poppins', sans-serif;
+     text-decoration: none;
+     list-style: none;
+     color: rgb(230, 230, 230);
+     font-size: 1.2rem;
+     letter-spacing: 1.4px;
+     cursor: pointer;
+ }
+ .nav-list li:hover {
+    opacity: .8;
+    font-size: 1.3rem;
+ }
+ /* --------------------------------HEADER */
+
+ /* ----------------------------------HOME */
+ 
+ /* -----------slideshow-container */
+ * {box-sizing: border-box}
+body {font-family: Verdana, sans-serif; margin:0}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  overflow: scroll;
+  max-height: 100px;
+  position: relative;
+  width: 100%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 8px;
+  width: 8px;
+  margin: 30px 2px 0px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+/* ----------- END of slideshow-container */
+
+/* ---------------------------------- END HOME */
+
+/* -------------------------------START FOOTER */
+.footer-panel{
+  background: rgb(17, 17, 17);
+}
+hr {
+  width: 50%;
+  margin: 5px auto;
+  background: rgb(226, 226, 226);
+
+}
+.footer-panel .social ,.address {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  text-align: center;
+  color: rgb(226, 226, 226);
+}
+.footer-panel .social {
+  padding-top: 15px;
+}
+.footer-panel img {
+  margin: 5px auto;
+}
+.address {
+  font-size: 10px;
+}
+/* -------------------------------END FOOTER */
+/* --------------------------------FORM PAGE */
+label {
+  color: aliceblue;
+}
+/* --------------------------------END FORM PAGE */
+
+ @media (max-width: 479px) {
+  .nav-list {
+    justify-content: space-around;
+    width: 15.4rem;
+    margin: 20px 0px 0px ;
+  }
+  .nav-list a {
+    font-size: 1rem;
+  }
+  /* ---------------------------------- HOME */
+  .main-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 27rem;
+  }
+  .Mcontent {
+    position: relative;
+    background-image: url("../images/pep.jfif");
+    background-position: top;
+    background-size: 300px;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+  }
+  .Acontent {
+    position: relative;
+    background-image: url("../images/academy.jpg");
+    background-position: top;
+    background-size: 300px;
+    width: 300px;
+    height: 200px;
+    margin: auto;
+  }
+ .Mbanar , .Abanar{
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    text-align: center;
+    background: rgb(243, 138, 52);
+  }
+  .Mcontent a {
+   text-decoration: none;
+   font-family: 'Questrial', sans-serif;
+   letter-spacing: 1.8px;
+   font-weight: 1000;
+   color: rgb(37, 37, 37);
+ }
+ .Acontent a {
+   text-decoration: none;
+   font-family: 'Questrial', sans-serif;
+   letter-spacing: 1.8px;
+   font-weight: 1000;
+   color: rgb(37, 37, 37);
+ }
+/* ---------------------------------- END HOME */
+
+ }
