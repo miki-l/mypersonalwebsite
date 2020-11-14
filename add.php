@@ -1,21 +1,21 @@
 <?php 
 
-	$email = $title = $ingredients = '';
-	$errors = array('fname' => '', 'lname' => '', 'phone' => '');
+	$fname = $lname = $phone = $email = '';
+	$errors = array('fname' => '', 'lname' => '', 'phone' => '', 'email' => '');
 
 	if(isset($_POST['submit'])){
 		
-		// check email
+		// check fname
 		if(empty($_POST['fname'])){
 			$errors['fname'] = 'A name is required';
 		} else{
 			$fname = $_POST['fname'];
-			if(!filter_var($fname, FILTER_VALIDATE_EMAIL)){
+			if(!preg_match('/^[a-zA-Z\s]+$/', $fname)){
 				$errors['fname'] = 'name must be a more than 4 letters';
 			}
 		}
 
-		// check title
+		// check lname
 		if(empty($_POST['lname'])){
 			$errors['lname'] = 'A title is required';
 		} else{
@@ -25,13 +25,23 @@
 			}
 		}
 
-		// check ingredients
+		// check phone number
 		if(empty($_POST['phone'])){
-			$errors['phone'] = 'At least one ingredient is required';
+			$errors['phone'] = 'A phone number is required';
 		} else{
 			$phone = $_POST['phone'];
-			if(!preg_match('/^([a-zA-Z\s]+)(,\s*[a-zA-Z\s]*)*$/', $phone)){
-				$errors['kphone'] = 'Ingredients must be a comma separated list';
+			if(!preg_match('/^[0-9\s]+$/', $phone)){
+				$errors['phone'] = 'Please enter a valid phone Number';
+			}
+		}
+
+		// check email
+		if(empty($_POST['email'])){
+			$errors['email'] = 'An email address is required';
+		} else{
+			$email = $_POST['email'];
+			if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+				$errors['email'] = 'Please enter a valid Email Address';
 			}
 		}
 
@@ -39,7 +49,7 @@
 			//echo 'errors in form';
 		} else {
 			//echo 'form is valid';
-			header('Location: index.php');
+			header('Location: greeting.php');
 		}
 
 	} // end POST check
@@ -56,13 +66,20 @@
 		<form class="white" action="add.php" method="POST">
 			<label>Name(first name):</label><br>
 			<input type="text" name="fname" value="<?php echo htmlspecialchars($fname) ?>">
-			<div class="red-text"><?php echo $errors['fname']; ?></div>
+			<div class="text"><?php echo $errors['fname']; ?></div>
+
 			<label>Name(last name):</label><br>
 			<input type="text" name="lname" value="<?php echo htmlspecialchars($lname) ?>">
-			<div class="red-text"><?php echo $errors['lname']; ?></div>
+			<div class="text"><?php echo $errors['lname']; ?></div>
+
 			<label>phone No.:</label><br>
 			<input type="text" name="phone" value="<?php echo htmlspecialchars($phone) ?>">
-			<div class="red-text"><?php echo $errors['phone']; ?></div>
+			<div class="text"><?php echo $errors['phone']; ?></div>
+
+			<label>Email:</label><br>
+			<input type="text" name="email" value="<?php echo htmlspecialchars($email) ?>">
+			<div class="text"><?php echo $errors['email']; ?></div>
+
 			<div class="center">
 				<input type="submit" name="submit" value="Submit" class="btn brand z-depth-0">
 			</div>
