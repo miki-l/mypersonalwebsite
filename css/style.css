@@ -5,7 +5,7 @@
 }
 
 body {
-    background: rgb(37, 37, 37);
+    background: rgb(241, 241, 241);
 }
 /* --------------------------------HEADER */
 .header {
@@ -32,7 +32,7 @@ body {
  .nav-list {
      display: flex;
      justify-content: space-around;
-     width: 15rem;
+     width: 8rem;
  }
  .nav-list a {
      font-family: 'Poppins', sans-serif;
@@ -136,7 +136,7 @@ img {vertical-align: middle;}
 
 /* -------------------------------START FOOTER */
 .footer-panel{
-  background: rgb(17, 17, 17);
+  background: rgb(27, 27, 27);
 }
 hr {
   width: 50%;
@@ -164,6 +164,7 @@ hr {
 
  @media (max-width: 479px) {
   .nav-list {
+    display: flex;
     justify-content: space-around;
     width: 15.4rem;
     margin: 10px auto 0px;
@@ -219,17 +220,38 @@ hr {
  }
 /* ---------------------------------- END HOME */
 
+/* ----------------------------------players page */
+.plysheader{
+  color: rgb(226, 225, 225);
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  margin-top: 10px;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #464242;
+  font-family: 'Poppins', sans-serif;
+  color:rgb(226, 225, 225);
+} 
+.card-content {
+  padding: 10px;
+}
+/* ----------------------------------end players page */
+
 /* --------------------------------FORM PAGE */
 .container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   padding-top: 20px;
   margin-bottom: 12%;
   margin-left: 10px;
 }
 .container h4 {
-  color: rgb(233, 233, 233);
+  color: rgb(22, 22, 22);
   font-size: larger;
   text-align: center;
   margin-bottom: 30px;
@@ -237,7 +259,7 @@ hr {
   letter-spacing: 1.8px;
 }
 label {
-  color: rgb(233, 233, 233);
+  color: rgb(22, 22, 22);
   text-align: center;
   font-family: 'Poppins', sans-serif;
 }
@@ -272,7 +294,7 @@ input {
   width: 100%;
   font-family: 'Bree Serif', serif;
   letter-spacing: 3px;
-  color: antiquewhite;
+  color: argb(22, 22, 22);
   margin: auto;
 }
 /* --------------------------------End greeting */

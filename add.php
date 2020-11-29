@@ -1,5 +1,7 @@
 <?php 
 
+	include('config/db_connect.php');
+
 	$fname = $lname = $phone = $email = '';
 	$errors = array('fname' => '', 'lname' => '', 'phone' => '', 'email' => '');
 
@@ -30,7 +32,7 @@
 			$errors['phone'] = 'A phone number is required';
 		} else{
 			$phone = $_POST['phone'];
-			if(!preg_match('/^[0-9\s]+$/', $phone)){
+			if(preg_match('#[^0-9\+\-\040/]#', $phone)){
 				$errors['phone'] = 'Please enter a valid phone Number';
 			}
 		}
@@ -48,8 +50,24 @@
 		if(array_filter($errors)){
 			//echo 'errors in form';
 		} else {
-			//echo 'form is valid';
-			header('Location: greeting.php');
+
+				// escape sql chars
+			$fname = mysqli_real_escape_string($conn, $_POST['fname']);
+			$lname = mysqli_real_escape_string($conn, $_POST['lname']);
+			$phone = mysqli_real_escape_string($conn, $_POST['phone']);
+			$email = mysqli_real_escape_string($conn, $_POST['email']);
+
+			// create sql
+			$sql = "INSERT INTO players(fname,lname,phone,email) VALUES('$fname','$lname','$phone','$email')";
+
+			// save to db and check
+			if(mysqli_query($conn, $sql)){
+				// success
+				header('Location: greeting.php');
+			} else {
+				echo 'query error: '. mysqli_error($conn);
+			}
+			
 		}
 
 	} // end POST check
