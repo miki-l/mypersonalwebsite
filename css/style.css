@@ -222,7 +222,7 @@ hr {
 
 /* ----------------------------------players page */
 .plysheader{
-  color: rgb(226, 225, 225);
+  color: rgb(0, 0, 0);
   font-family: 'Poppins', sans-serif;
   letter-spacing: 1px;
   text-align: center;
@@ -232,12 +232,22 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #464242;
   font-family: 'Poppins', sans-serif;
-  color:rgb(226, 225, 225);
+  color:rgb(31, 31, 31);
 } 
 .card-content {
   padding: 10px;
+
+}
+.del_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  color: #cacaca;
+  font-style: bold;
+  font-size: large;
+  background: rgb(17, 111, 219);
 }
 /* ----------------------------------end players page */
 
